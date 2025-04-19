@@ -4,3 +4,4 @@ author: Illuzionz Studios
 main: com.illuzionzstudios.customfishing.CustomFishing
 description: Customize the fishing system of minecraft
 api-version: "1.13"
+softdepend: [PlaceholderAPI]

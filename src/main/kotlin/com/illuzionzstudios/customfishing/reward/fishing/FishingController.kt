@@ -49,6 +49,7 @@ object FishingController : PluginController {
     private fun processRewards(player: Player, event: PlayerFishEvent) {
         // Try reward. Kotlin will handle null checks :)
         val reward: FishingReward? = RewardController.pickReward(player)
-        reward?.reward(player, event)
+        reward?.reward(player,
+            event)
     }
 }
