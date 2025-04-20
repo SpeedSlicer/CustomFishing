@@ -76,11 +76,6 @@ class FishingReward : EventReward<PlayerFishEvent> {
      * Requirements for this reward
      */
     var requirements: List<PlayerRequirement>? = ArrayList()
-    fun givePlayer(player: Player) {
-        items?.forEach {
-            it.givePlayer(player);
-        }
-    }
 
     override fun reward(player: Player, event: PlayerFishEvent) {
         // Get global reward placeholders

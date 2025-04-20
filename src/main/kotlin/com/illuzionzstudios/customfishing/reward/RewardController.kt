@@ -3,16 +3,11 @@ package com.illuzionzstudios.customfishing.reward
 import com.illuzionzstudios.customfishing.reward.fishing.FishingReward
 import com.illuzionzstudios.customfishing.reward.fishing.loader.FishingRewardLoader
 import com.illuzionzstudios.mist.Logger
-import com.illuzionzstudios.mist.command.SpigotSubCommand
-import com.illuzionzstudios.mist.command.response.ReturnType
 import com.illuzionzstudios.mist.config.serialization.loader.DirectoryLoader
 import com.illuzionzstudios.mist.controller.PluginController
 import com.illuzionzstudios.mist.plugin.SpigotPlugin
 import com.illuzionzstudios.mist.random.LootTable
-import org.bukkit.Bukkit
-import org.bukkit.Bukkit.getPlayer
 import org.bukkit.entity.Player
-import org.bukkit.event.player.PlayerFishEvent
 
 object RewardController : PluginController {
 
@@ -33,12 +28,6 @@ object RewardController : PluginController {
             loadedRewards.add(it.`object`)
             Logger.info("Loading fishing reward '${it.`object`.name}'")
         }
-
-        val admin = Bukkit.getPlayerExact("Admin")
-        if (admin != null && admin.isOnline) {
-            Logger.info("passed check");
-            getItems(admin);
-        }
     }
 
     override fun stop(plugin: SpigotPlugin) {
@@ -57,11 +46,4 @@ object RewardController : PluginController {
 
         return lootTable.pick()
     }
-
-    fun getItems(player: Player) {
-        loadedRewards.forEach { a ->
-            a.givePlayer(player);
-        }
-    }
-
 }

@@ -8,8 +8,6 @@ import com.illuzionzstudios.customfishing.settings.Settings
 import com.illuzionzstudios.mist.config.PluginSettings
 import com.illuzionzstudios.mist.config.locale.PluginLocale
 import com.illuzionzstudios.mist.plugin.SpigotPlugin
-import org.bukkit.Bukkit
-import org.bukkit.Bukkit.getPlayer
 import org.bukkit.ChatColor
 
 class CustomFishing : SpigotPlugin(7247) {
@@ -41,14 +39,11 @@ class CustomFishing : SpigotPlugin(7247) {
     }
 
     override fun onPluginReload() {
-
     }
-
 
     override fun onRegisterReloadables() {
         registerMainCommand(CustomFishingCommand(), "fishing", "customfishing")
         reloadables.registerController(RewardController)
         reloadables.registerController(FishingController)
-
     }
 }

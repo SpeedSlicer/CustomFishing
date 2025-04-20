@@ -9,6 +9,5 @@ class CustomFishingCommand : SpigotCommandGroup() {
 
     override fun registerSubcommands() {
         registerSubCommand(ReloadCommand())
-
     }
 }
