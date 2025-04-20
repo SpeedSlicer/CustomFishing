@@ -12,7 +12,8 @@ public class CustomFishingConnector {
     public static RewardController rewardController;
 
     public static void addReward(String rewardName, FishingReward fishingReward) {
-        fishingRewards.put(rewardName, fishingReward);
+        String rewardNameFinal = rewardName.replace(" ", "");
+        fishingRewards.put(rewardNameFinal, fishingReward);
         fishingNameAutoComplete.add(rewardName);
     }
 

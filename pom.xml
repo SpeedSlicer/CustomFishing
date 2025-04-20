@@ -113,8 +113,8 @@
         </dependency>
     </dependencies>
     <build>
-        <sourceDirectory>src/main/kotlin</sourceDirectory> 
-        <finalName>CustomFishing-${project.version}</finalName>
+        <sourceDirectory>src/main/kotlin</sourceDirectory>
+        <finalName>CustomFishingReloaded-${project.version}</finalName>
 
         <plugins>
             <plugin>
