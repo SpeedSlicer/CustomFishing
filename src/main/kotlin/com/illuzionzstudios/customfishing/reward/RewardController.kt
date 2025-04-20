@@ -8,6 +8,7 @@ import com.illuzionzstudios.mist.controller.PluginController
 import com.illuzionzstudios.mist.plugin.SpigotPlugin
 import com.illuzionzstudios.mist.random.LootTable
 import org.bukkit.entity.Player
+import org.speedslicer.customfishing.CustomFishingConnector
 
 object RewardController : PluginController {
 
@@ -26,6 +27,7 @@ object RewardController : PluginController {
             listOf("demo_reward.yml")
         ).loaders.forEach {
             loadedRewards.add(it.`object`)
+            CustomFishingConnector.addReward(it.`object`.name, it.`object`);
             Logger.info("Loading fishing reward '${it.`object`.name}'")
         }
     }
