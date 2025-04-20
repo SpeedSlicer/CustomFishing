@@ -32,7 +32,7 @@ class ReflectionUtil {
          * automatically
          */
         fun getNMSClass(name: String): Class<*> {
-            return lookupClass(NMS + "." + ServerVersion.getServerVersion() + "." + name)
+            return lookupClass(NMS + "." + ServerVersion.getServerVersion() + name)
         }
 
         /**
@@ -40,7 +40,7 @@ class ReflectionUtil {
          * automatically
          */
         fun getOBCClass(name: String): Class<*> {
-            return lookupClass(CRAFTBUKKIT + "." + ServerVersion.getServerVersion() + "." + name)
+            return lookupClass(CRAFTBUKKIT + "." + ServerVersion.getServerVersion() + name)
         }
 
         /**

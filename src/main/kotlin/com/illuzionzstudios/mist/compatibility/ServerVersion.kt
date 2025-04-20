@@ -63,7 +63,7 @@ object ServerVersion {
      * Return the class versioning such as v1_14_R1
      */
     fun getServerVersion(): String {
-        return if (serverVersion == "craftbukkit") "" else serverVersion!!
+        return if (serverVersion == "craftbukkit") "" else (serverVersion + '.')!!
     }
 
     /**
@@ -79,7 +79,10 @@ object ServerVersion {
          */
         @field:Getter private val tested: Boolean = true
     ) {
-        v1_19(19), v1_18(18), v1_17(17), v1_16(16), v1_15(15), v1_14(14), v1_13(13), v1_12(12), v1_11(11), v1_10(10), v1_9(9), v1_8(
+        v1_21(21), v1_20(20), v1_19(19), v1_18(18), v1_17(17), v1_16(16), v1_15(15), v1_14(14), v1_13(13), v1_12(12), v1_11(
+            11
+        ),
+        v1_10(10), v1_9(9), v1_8(
             8
         ),
         v1_7(7, false), v1_6(6, false), v1_5(5, false), v1_4(4, false), v1_3_AND_BELOW(3, false);

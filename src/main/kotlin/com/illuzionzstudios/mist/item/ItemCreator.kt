@@ -151,7 +151,7 @@ class ItemCreator(
 
         // Glow
         if (glow) {
-            stackMeta?.addEnchant(Enchantment.DURABILITY, 1, true)
+            stackMeta?.addEnchant(Enchantment.UNBREAKING, 1, true)
             flags.add(XItemFlag.HIDE_ENCHANTS)
         }
 

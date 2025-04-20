@@ -30,8 +30,10 @@ public class GiveCommand extends SpigotSubCommand {
             getSender().sendMessage("&5Needs permission: customfishing.giveitem");
             return ReturnType.NO_PERMISSION;
         }
-        String key = getArgs()[0];
-
+        String key = "";
+        for (String arg : getArgs()) {
+            key = key + arg;
+        }
         if (CustomFishingConnector.itemExists(key)) {
             getSender().sendMessage("§aGave rewards for: " + key);
             for (FishingItem item : Objects.requireNonNull(CustomFishingConnector.getReward(key).getItems())) {

@@ -3,6 +3,8 @@ package com.illuzionzstudios.mist.util
 import com.google.gson.GsonBuilder
 import com.illuzionzstudios.mist.util.UUIDFetcher
 import com.mojang.util.UUIDTypeAdapter
+import org.bukkit.Bukkit
+import org.bukkit.entity.Player
 import java.io.*
 import java.net.HttpURLConnection
 import java.net.URL
@@ -120,7 +122,7 @@ class UUIDFetcher(
                     URL(
                         String.format(
                             NAME_URL,
-                            UUIDTypeAdapter.fromUUID(uuid)
+                            uuid?.let { Bukkit.getOfflinePlayer(it) }
                         )
                     ).openConnection() as HttpURLConnection
                 connection.readTimeout = 5000
