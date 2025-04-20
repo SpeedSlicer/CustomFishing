@@ -16,6 +16,7 @@ public class GiveCommand extends SpigotSubCommand {
     public GiveCommand() {
 
         super("give", "g");
+        setDescription("gives fish based on entry. Usage: /fishing give <itemKey>. Use /fishing listFish to see all possible fish");
     }
 
     @Override
