@@ -151,7 +151,12 @@ class ItemCreator(
 
         // Glow
         if (glow) {
-            stackMeta?.addEnchant(Enchantment.UNBREAKING, 1, true)
+            if (ServerVersion.atLeast(V.v1_20)) {
+                stackMeta?.addEnchant(Enchantment.PROTECTION, 1, true)
+            } else {
+                stackMeta?.addEnchant(Enchantment.PROTECTION, 1, true)
+
+            }
             flags.add(XItemFlag.HIDE_ENCHANTS)
         }
 
@@ -182,7 +187,8 @@ class ItemCreator(
             if (ServerVersion.olderThan(V.v1_12)) {
                 try {
                     val spigot = stackMeta?.javaClass?.getMethod("spigot")?.invoke(stackMeta)
-                    spigot?.javaClass?.getMethod("setUnbreakable", Boolean::class.javaPrimitiveType)?.invoke(spigot, true)
+                    spigot?.javaClass?.getMethod("setUnbreakable", Boolean::class.javaPrimitiveType)
+                        ?.invoke(spigot, true)
                 } catch (ignored: Throwable) {
                     // Probably 1.7.10, tough luck
                 }
