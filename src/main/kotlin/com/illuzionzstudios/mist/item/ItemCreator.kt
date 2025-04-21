@@ -151,11 +151,9 @@ class ItemCreator(
 
         // Glow
         if (glow) {
-            if (ServerVersion.atLeast(V.v1_20)) {
-                stackMeta?.addEnchant(Enchantment.FLAME, 1, true)
-            } else {
-                stackMeta?.addEnchant(Enchantment.FLAME, 1, true)
-
+            val glowEnchant = XEnchantment.MENDING.enchant
+            if (glowEnchant != null) {
+                stackMeta?.addEnchant(glowEnchant, 1, true)
             }
             flags.add(XItemFlag.HIDE_ENCHANTS)
         }
